@@ -41,6 +41,8 @@ const trocarNome = (request, response) => {
     for (key in nomeTrocado){
         gameParaAtualizar[key] = nomeTrocado[key]
     }
+
+    response.status(200).send(gameParaAtualizar)
 }
 
 

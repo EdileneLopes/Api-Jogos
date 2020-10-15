@@ -29,7 +29,7 @@ router.put('/games/:id', gamesController.atualizarNome)
 @access Public 
 @endpoint http:/localhost:porta/games/:id
 **/
-router.put('/games/:id', gamesController.trocarNome)
+router.patch('/games/:id', gamesController.trocarNome)
 
 
 
