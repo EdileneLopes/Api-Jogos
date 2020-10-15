@@ -2,10 +2,10 @@ const express = require('express')
 
 const app = express()
 
-const games = require('./routes/games-routes')
+const router = require('./routes/games-routes')
 
 app.use(express.json())
-app.use('/', games)
+app.use('/', router)
 
 
 module.exports = app
