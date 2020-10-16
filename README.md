@@ -10,7 +10,7 @@ Colocar em prática o aprendizado da semana 10 do curso da {Reprograma} que são
 
 ## Arquitetura
 
-![Arquitetura do projeto](projeto.png)
+![Projeto](https://user-images.githubusercontent.com/60043558/96259871-9687f100-0f94-11eb-9a1f-2494b0410cdb.png)
 
 
 
