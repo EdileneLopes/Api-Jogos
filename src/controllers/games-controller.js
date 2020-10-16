@@ -7,19 +7,21 @@ const getGames = (request, response) => {
 
 
 //função para atualizar usando PUT
-const atualizarNome = (request, response) => {
+const atualizarItem = (request, response) => {
     //a requisição é feita no body
-    const nomeAtualizado = request.body
+    const jogoAtualizado = request.body
     
     //certifica que o id é im inteiro
     const id = parseInt(request.params.id)
-
-    //traz o índice do game citado na url(trouxe -1?)
+    console.log('esse é o id: ', id)
+    
+    //traz o índice do game citado na url
     const atualizaId = gamesModel.indexOf(id)
     console.log('esse é o índice:', atualizaId)
     
     //desestruturação com esa6 do game citado na url
-    const gameAtualizadoComId = {id, ...nomeAtualizado}
+    const gameAtualizadoComId = {id, ...jogoAtualizado}
+    console.log('esse é o game Atualizado com Id',gameAtualizadoComId)
     
     //troca sendo feita do id mencionado, a partir de 1 troque por o desentruturado
     gamesModel.splice(atualizaId, 1, gameAtualizadoComId)
@@ -32,14 +34,14 @@ const atualizarNome = (request, response) => {
 
 //função para atualizar nome usando PATCH
 
-const trocarNome = (request, response) => {
-    const nomeTrocado = request.body
+const trocarItem = (request, response) => {
+    const itemTrocado = request.body
     const id = parseInt(request.params.id)
 
     const gameParaAtualizar = gamesModel.find(game => game.id == id)
 
-    for (key in nomeTrocado){
-        gameParaAtualizar[key] = nomeTrocado[key]
+    for (key in itemTrocado){
+        gameParaAtualizar[key] = itemTrocado[key]
     }
 
     response.status(200).send(gameParaAtualizar)
@@ -50,6 +52,6 @@ const trocarNome = (request, response) => {
 
 module.exports = {
     getGames,
-    atualizarNome,
-    trocarNome
+    atualizarItem,
+    trocarItem
 }
