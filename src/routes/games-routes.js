@@ -16,7 +16,7 @@ router.get('/games', gamesController.getGames)
 
 /**
 @router PUT 
-@desc altera o nome do game a partir do id
+@desc altera o qualquer chave do game a partir do id
 @access Public 
 @endpoint http:/localhost:porta/games/:id
 **/
@@ -25,7 +25,7 @@ router.put('/games/:id', gamesController.atualizarItem)
 
 /**
 @router PATCH
-@desc altera o nome do game a partir do id
+@desc altera o item do game a partir do id
 @access Public 
 @endpoint http:/localhost:porta/games/:id
 **/
